@@ -8,7 +8,7 @@ const getUserRecords = async (userId) => {
                to_char(create_date :: DATE, 'dd/mm/yyyy') as create_date,
                investigations,
                diagnosis,
-               prescription,
+               vaccine,
                doc.name                                   as doctor_name,
                h.name                                     as doctor_hospital,
                doc.picture_url                            as doctor_photo
@@ -78,14 +78,14 @@ const revokeAccess = async (userId, doctorId) => {
 
 const registerRecord = (record) => {
     const query = `
-        insert into records(type, investigations, diagnosis, prescription, create_date, doctor, owner_id)
+        insert into records(type, investigations, diagnosis, vaccine, create_date, doctor, owner_id)
         values ($1, $2, $3, $4, now(), (select id from doctors where user_id = $5), $6)
     `;
     return executeQuery(query, [
         1,
         record.investigations,
         record.diagnosis,
-        record.prescription,
+        record.vaccine,
         record.doctor_user_id,
         record.owner_id
     ])

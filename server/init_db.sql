@@ -1,23 +1,65 @@
 CREATE TABLE IF NOT EXISTS messages (
+    id SERIAL PRIMARY KEY,
     subject varchar NOT NULL,
     message varchar,
     response varchar,
     important BOOLEAN NOT NULL DEFAULT false,
-    create_date DATE
-);
-
-CREATE TABLE IF NOT EXISTS users (
-    username varchar NOT NULL,
-    password varchar NOT NULL,
-    email varchar,
-    name varchar NOT NULL,
-    role_id INT,
-    email_verification_token varchar
+    create_date TIMESTAMP DEFAULT NOW(),
+    author varchar
 );
 
 CREATE TABLE IF NOT EXISTS roles (
-    role_id INT,
+    role_id SERIAL PRIMARY KEY,
     role varchar NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS hospitals (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR (25) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS medical_specialties (
+    id SERIAL PRIMARY KEY,
+    name varchar NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username varchar NOT NULL,
+    password VARCHAR (64) NOT NULL,
+    email VARCHAR (50) UNIQUE,
+    name VARCHAR (25) NOT NULL,
+    role_id INTEGER REFERENCES roles(role_id) NOT NULL,
+    email_verification_token varchar
+);
+
+CREATE TABLE IF NOT EXISTS doctors (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR (25) NOT NULL,
+    title varchar,
+    description varchar,
+    specialty INTEGER REFERENCES medical_specialties(id),
+    workplace INTEGER REFERENCES hospitals(id),
+    picture_url varchar,
+    rating INT
+);
+
+CREATE TABLE IF NOT EXISTS records ( 
+    id SERIAL PRIMARY KEY,
+    type varchar NOT NULL,
+    investigations varchar,
+    diagnosis varchar,
+    vaccine varchar,
+    create_date TIMESTAMP DEFAULT NOW(),
+    doctor INTEGER REFERENCES doctors(id) NOT NULL,
+    owner_id INTEGER REFERENCES users(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS access_grants (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) NOT NULL,
+    doctor_id INTEGER REFERENCES doctors(id) NOT NULL,
+    valid_until DATE
 );
 
 insert into messages (subject, message, response, important, create_date)
@@ -31,6 +73,15 @@ values ('I forgot my password. How do I reset it?', '', null, true, now());
 
 insert into messages (subject, message, response, important, create_date)
 values ('What is the platform name', '', 'Vaccine Hero', true, now());
+
+insert into roles(role_id, role)
+values(0, 'admin');
+
+insert into roles(role_id, role)
+values(1, 'support');
+
+insert into roles(role_id, role)
+values(2, 'user');
 
 insert into users(username, password, email, name, role_id, email_verification_token)
 values ('admin', '$2a$05$syuu4EhTXSc1C/cx.UWfD.jThhANP6ZsAnTeiCaAHy190TYUyk/E.', null, 'Administrator', 0, null);
@@ -46,12 +97,3 @@ values ('vladut', '$2a$05$5604J5S2Ve6g0lG9d5dxi.1iJBWhPMsxSzW1ouCfROcrsU.2/vDJy'
 
 insert into users(username, password, email, name, role_id, email_verification_token)
 values ('pw', '$2a$05$zmL1QTEEHvIIvD2YlNEffeXjQXRgRMrsW79pyOHsMc8PEiw1nkjne', 'md.vaccine.hero@gmail.com', 'Roxana Scurtu', 2, null);
-
-insert into roles(role_id, role)
-values(0, 'admin');
-
-insert into roles(role_id, role)
-values(1, 'support');
-
-insert into roles(role_id, role)
-values(2, 'user');
