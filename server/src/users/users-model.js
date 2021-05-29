@@ -68,7 +68,7 @@ const authenticate = async (username, password) => {
 const sendValidationEmail = async (email, verificationToken) => {
     const verificationLink = `${process.env.HOST}:${process.env.PORT}/api/v1/users/verify?token=${verificationToken}`;
 
-    const mailSubject = "Welcome to Medical.Net! Confirm your email";
+    const mailSubject = "Welcome to Vaccine-Hero.Ro! Confirm your email";
     const mailBody = 'By clicking on the following link, you are confirming your email address.' +
         `<br/><a class="button" href="${verificationLink}" style="
           background-color: #4CAF50;
