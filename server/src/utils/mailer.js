@@ -83,7 +83,7 @@ class Mailer {
         // You can also just use a plain string if you don't need anything fancy.
         const utf8Subject = `=?utf-8?B?${Buffer.from(subject).toString('base64')}?=`;
         const messageParts = [
-            'From: Medical.Net <md.medical.net@gmail.com>',
+            'From: Vaccine-Hero.Ro <md.vaccine.hero@gmail.com>',
             `To: <${to}>`,
             'Content-Type: text/html; charset=utf-8',
             'MIME-Version: 1.0',
