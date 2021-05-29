@@ -1,0 +1,42 @@
+{
+  "name": "vaccine-hero",
+  "version": "1.0.0",
+  "description": "Project 2021 PWeb",
+  "main": "start.js",
+  "scripts": {
+    "start-prod": "node start.js",
+    "start": "nodemon -r dotenv/config start.js",
+    "test-mail": "node -r dotenv/config src/utils/mailer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladutmargineanu/Vaccine-Hero.Ro.git"
+  },
+  "author": "Vladut Margineanu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladutmargineanu/Vaccine-Hero.Ro/issues"
+  },
+  "homepage": "https://github.com/vladutmargineanu/Vaccine-Hero.Ro#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.4",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "googleapis": "^74.2.0",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.12",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.1",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
+    "rand-token": "^1.0.1",
+    "validator": "^13.6.0",
+    "winston": "^3.3.3"
+  }
+}
