@@ -4,7 +4,7 @@
   "description": "Project 2021 PWeb",
   "main": "start.js",
   "scripts": {
-    "start-prod": "node start.js",
+    "start-docker": "node start.js",
     "start": "nodemon -r dotenv/config start.js",
     "test-mail": "node -r dotenv/config src/utils/mailer.js"
   },
