@@ -3,9 +3,11 @@ Web platform for the Ministry of Health - Romania that helps the interaction bet
 
 ``` Backend - server:```
 
-Project initialization:
+Project initialization and start:
  ```jsp
 npm init  
+npm run start
+
 ```
 
 Install packs:
