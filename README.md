@@ -1,7 +1,7 @@
-# Vaccine-Hero.Ro
+# ```Vaccine-Hero.Ro```
 Web platform for the Ministry of Health - Romania that helps the interaction between doctors and patients. Mainly, the application is made in order to keep a record of vaccines made by a patient over the years.
 
-Backend - server:
+``` Backend - server:```
 
 Initializare proiect:
 npm init
@@ -20,7 +20,7 @@ docker-compose up
 Stergerea volumelor create:
 docker system prune –volumes
 
-Front-end:
+``` Front-end:```
 
 Generarea unui proiect:
 npx create-react-app vaccine-hero
