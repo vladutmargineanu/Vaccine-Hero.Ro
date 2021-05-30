@@ -17,7 +17,7 @@ services:
     environment:
       POSTGRES_USER: dbuser
       POSTGRES_PASSWORD: dbpass
-      POSTGRES_DB: bookstore
+      POSTGRES_DB: vaccine
       TZ: Europe/Bucharest
       PGTZ: Europe/Bucharest
     ports:

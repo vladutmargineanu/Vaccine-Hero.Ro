@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS medical_specialties (
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username varchar NOT NULL,
-    password VARCHAR (64) NOT NULL,
+    password VARCHAR NOT NULL,
     email VARCHAR (50) UNIQUE,
     name VARCHAR (25) NOT NULL,
     role_id INTEGER REFERENCES roles(role_id) NOT NULL,
