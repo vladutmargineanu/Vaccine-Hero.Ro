@@ -3,17 +3,17 @@ Web platform for the Ministry of Health - Romania that helps the interaction bet
 
 ``` Backend - server:```
 
-Initializare proiect:
+Project initialization:
  ```jsp
 npm init  
 ```
 
-Instalare pachete:
+Install packs:
  ```jsp
 npm install nume_pachet --save 
 ```
 
-Containerizare (docker and docker-compose)
+Containerization (docker and docker-compose)
  ```jsp
 docker container ls -qa
 docker container rm [id]
@@ -22,19 +22,19 @@ docker container rm [id]
 docker volume ls 
 docker volume rm [VolumeName]
  ```
-Crearea bazei de date in container - init
- ```jsp
+Creating the database in the container - init
+```jsp
 docker-compose up
  ```
-Stergerea volumelor create:
- ```jsp
+Delete created volumes:
+```jsp
 docker system prune –volumes
  ```
 
 ``` Front-end:```
 
-Generarea unui proiect:
- ```jsp
+Generating a project:
+```jsp
 npx create-react-app vaccine-hero
  ```
 
