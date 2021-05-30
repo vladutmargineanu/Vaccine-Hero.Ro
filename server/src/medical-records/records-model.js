@@ -61,7 +61,7 @@ const getAccessGrantsAsUserId = async (userId) => {
 const grantAccess = async (userId, doctorId) => {
     const query = `
         insert into access_grants(user_id, doctor_id, valid_until)
-        values ($1, $2, now() + interval '1d')
+        values ($1, $2, now() + interval '5d')
     `;
     await executeQuery(query, [userId, doctorId]);
 };

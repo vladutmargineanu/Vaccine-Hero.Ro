@@ -88,7 +88,7 @@ const NewRecordModal = (props) => {
             {
                 flex: '1 1 auto',
                 borderTop: `4px solid ${theme.palette.themePrimary}`,
-                color: theme.palette.neutralPrimary,
+                color: theme.palette.greenDark,
                 display: 'flex',
                 alignItems: 'center',
                 padding: '12px 12px 14px 24px',
@@ -98,7 +98,7 @@ const NewRecordModal = (props) => {
     });
     const iconButtonStyles = {
         root: {
-            color: theme.palette.neutralPrimary,
+            color: theme.palette.greenDark,
             margin: '4px 2px 0 auto',
         },
         rootHovered: {
@@ -167,7 +167,7 @@ const Record = (props) => {
     return (
         <div className={style.recordCard} style={{boxShadow: Depths.depth8}}>
             <div>
-                <Label style={{color: palette.neutralSecondary, display: "inline"}}>Date: </Label>
+                <Label style={{color: palette.greenDark, display: "inline"}}>Date: </Label>
                 <Text variant={"medium"} style={{display: "inline"}}>{props.info.create_date}</Text>
             </div>
             <div>

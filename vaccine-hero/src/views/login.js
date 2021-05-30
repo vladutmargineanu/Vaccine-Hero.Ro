@@ -53,7 +53,7 @@ const LoginPanel = props => {
                             <TextField label="Password:" id="field-pass" type="password"
                                        underlined autoComplete="current-password" errorMessage={err}
                             />
-                            <Link className={style.smallLink} to="/register" style={{color: palette.themePrimary}}>
+                            <Link className={style.smallLink} to="/register" style={{color: palette.greenDark}}>
                                 Don't have an account?
                             </Link>
 

@@ -45,6 +45,7 @@ Inside that directory, you can run several commands:
 Starts the development server:
  ```jsp
 npm start 
+REACT_APP_GOOGLE_CLIENT_ID=YxvqMJE1fpCpbgT1jdQ3WV_r npm start
  ```
 
 Bundles the app into static files for production:
@@ -67,3 +68,5 @@ We suggest that you begin by typing:
 cd vaccine-hero
 npm start
  ```
+
+http://localhost:3000/oauth2callback?code=4/0AY0e-g4h176_7sxZOqdcXg3Vg912AKYxTcyDo1oN8alZ0PMNmu9RsO6WIhWl_8naOVXcsA&scope=https://www.googleapis.com/auth/gmail.readonly

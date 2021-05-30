@@ -1,19 +1,19 @@
 @import '~office-ui-fabric-core/src/sass/variables/Color.Variables';
 
 .nav {
-  background-color: white;
+  background-color: rgb(7, 195, 252);
 
   position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 50px;
+  height: 75px;
 
   display: flex;
   align-items: center;
 
   .logo {
-    margin: 0 15px;
+    margin: 0 50px;
   }
 
   .navMenu {
@@ -101,7 +101,7 @@
   height: 100%;
 
   &:hover {
-    background-color: $ms-color-neutralLighter;
+    background-color: #07f707;
   }
 }
 
@@ -188,9 +188,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  max-height: 500px;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 100px 0;
 
   background-color: white;
 
@@ -217,7 +217,7 @@
     width: 50px;
     margin: 0 25px;
 
-    color: #ae4f5d;
+    color: #07f707;
   }
 
   .heading {
@@ -434,8 +434,8 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 
   .gridItem {
-    //background-color: green;
-    //border: 1px solid #fff;
+    background-color: green;
+    border: 1px solid #fff;
     padding: 15px;
 
     display: flex;

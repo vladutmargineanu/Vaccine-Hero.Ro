@@ -10,7 +10,7 @@ import {
 } from 'office-ui-fabric-react';
 import {Depths} from '@uifabric/fluent-theme/lib/fluent/FluentDepths';
 import {useCookies} from "react-cookie";
-
+import Logo from '../res/logo.png';
 
 initializeIcons();
 
@@ -45,7 +45,7 @@ const Navbar = props => {
             iconProps: {
                 iconName: 'UserRemove',
                 style: {
-                    color: 'salmon',
+                    color: 'green',
                 },
             },
             text: 'Sign out',
@@ -112,7 +112,7 @@ const Navbar = props => {
             />
             <div className={style.logo}>
                 <Link to={'/'}>
-                    <img src={require('../res/logo.png')} alt="VaccineHero.Ro logo"/>
+                    <img src={Logo} alt="VaccineHero.Ro logo" width="180" height="100"/>
                 </Link>
             </div>
             <Stack className={style.navMenu} horizontal tokens={{childrenGap: 20}}>

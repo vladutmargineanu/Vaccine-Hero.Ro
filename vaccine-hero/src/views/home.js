@@ -12,7 +12,7 @@ const Home = (props) => {
 
     return (
         <div className={style.flexContainer}>
-            <div className={style.homeContent} style={{backgroundColor: palette.neutralLighter}}>
+            <div className={style.homeContent} style={{backgroundColor: palette.neutralLight}}>
                 <div className={style.placeholder}>
                     <img src={require('../res/record.jpg')} alt=""/>
                 </div>

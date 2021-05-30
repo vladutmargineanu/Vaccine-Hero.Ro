@@ -35,13 +35,14 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS doctors (
     id SERIAL PRIMARY KEY,
+    user_id INTEGER DEFAULT 3,
     name VARCHAR (25) NOT NULL,
     title varchar,
     description varchar,
     specialty INTEGER REFERENCES medical_specialties(id),
     workplace INTEGER REFERENCES hospitals(id),
     picture_url varchar,
-    rating INT
+    rating DECIMAL
 );
 
 CREATE TABLE IF NOT EXISTS records ( 
@@ -83,17 +84,38 @@ values(1, 'support');
 insert into roles(role_id, role)
 values(2, 'user');
 
-insert into users(username, password, email, name, role_id, email_verification_token)
-values ('admin', '$2a$05$syuu4EhTXSc1C/cx.UWfD.jThhANP6ZsAnTeiCaAHy190TYUyk/E.', null, 'Administrator', 0, null);
+insert into roles(role_id, role)
+values(3, 'doctor');
 
-insert into users(username, password, email, name, role_id, email_verification_token)
-values ('tech', '$2a$05$59lSLlwhHq5RUjAxtLJ9o.oDViE9riaE4fqBWE2gbe5DIaaIxFYNm', null, 'Tech Support', 1, null);
+insert into hospitals(name)
+values('Bucuresti');
 
-insert into users(username, password, email, name, role_id, email_verification_token)
-values ('margineanu', '$2a$05$lnEIkyzxW5C9d1.KxYPJn.gx3NN/1tdgUdptIinzH7cQeMejuRZEa', 'vladut.margineanu@gmail.com', 'Vladut Margineanu', 2, null);
+insert into hospitals(name)
+values('Targu Jiu');
 
-insert into users(username, password, email, name, role_id, email_verification_token)
-values ('vladut', '$2a$05$5604J5S2Ve6g0lG9d5dxi.1iJBWhPMsxSzW1ouCfROcrsU.2/vDJy', 'vladutz97.nm@gmail.com', 'Nicolae Margineanu', 2, null);
+insert into hospitals(name)
+values('Strehaia');
 
-insert into users(username, password, email, name, role_id, email_verification_token)
-values ('pw', '$2a$05$zmL1QTEEHvIIvD2YlNEffeXjQXRgRMrsW79pyOHsMc8PEiw1nkjne', 'md.vaccine.hero@gmail.com', 'Roxana Scurtu', 2, null);
+insert into medical_specialties(name)
+values('Chirurg');
+
+insert into medical_specialties(name)
+values('Pediatru');
+
+insert into medical_specialties(name)
+values('Oftalmolog');
+
+-- insert into users(username, password, email, name, role_id, email_verification_token)
+-- values ('admin', '$2a$05$syuu4EhTXSc1C/cx.UWfD.jThhANP6ZsAnTeiCaAHy190TYUyk/E.', null, 'Administrator', 0, null);
+
+-- insert into users(username, password, email, name, role_id, email_verification_token)
+-- values ('tech', '$2a$05$59lSLlwhHq5RUjAxtLJ9o.oDViE9riaE4fqBWE2gbe5DIaaIxFYNm', null, 'Tech Support', 1, null);
+
+-- insert into users(username, password, email, name, role_id, email_verification_token)
+-- values ('margineanu', '$2a$05$lnEIkyzxW5C9d1.KxYPJn.gx3NN/1tdgUdptIinzH7cQeMejuRZEa', 'vladut.margineanu@gmail.com', 'Vladut Margineanu', 2, null);
+
+-- insert into users(username, password, email, name, role_id, email_verification_token)
+-- values ('vladut', '$2a$05$5604J5S2Ve6g0lG9d5dxi.1iJBWhPMsxSzW1ouCfROcrsU.2/vDJy', 'vladutz97.nm@gmail.com', 'Nicolae Margineanu', 2, null);
+
+-- insert into users(username, password, email, name, role_id, email_verification_token)
+-- values ('pw', '$2a$05$zmL1QTEEHvIIvD2YlNEffeXjQXRgRMrsW79pyOHsMc8PEiw1nkjne', 'md.vaccine.hero@gmail.com', 'Roxana Scurtu', 2, null);

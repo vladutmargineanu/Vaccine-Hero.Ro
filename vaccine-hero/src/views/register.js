@@ -40,7 +40,7 @@ const EmailConfirm = () => {
                     <Text variant={'medium'} block>
                         Your account was successfully validated.
                     </Text>
-                    <Link className={style.smallLink} to="/login" style={{color: palette.themePrimary}}>Go to login
+                    <Link className={style.smallLink} to="/login" style={{color: palette.greenDark}}>Go to login
                         page</Link>
                     <br/>
                 </Stack>

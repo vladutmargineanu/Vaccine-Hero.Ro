@@ -9,7 +9,7 @@ const Footer = () => {
     const {palette} = getTheme();
 
     return (
-        <div className={style.footer} style={{backgroundColor: palette.neutralLighter}}>
+        <div className={style.footer} style={{backgroundColor: palette.blueLight}}>
             <div className={style.centerBox}>
                 <div className={style.column}>
                     <h3>{strings.appName}</h3>

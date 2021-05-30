@@ -15,7 +15,7 @@ const NotFound = () => {
                     <Text variant={'medium'} block>
                         The page you are trying to access cannot be found.
                     </Text>
-                    <Link className={style.smallLink} to="/" style={{color: palette.themePrimary}}>
+                    <Link className={style.smallLink} to="/" style={{color: palette.greenDark}}>
                         Go to home page
                     </Link>
                     <br/>

@@ -51,7 +51,7 @@ const _assureForeignKeysPrerequisites = async (info) => {
             values ($1)
         `;
         await executeQuery(query, [info.specialty]);
-        info.specialty = (await executeQuery('select id from medical_specialities where name = $1', [info.specialty]))[0].id;
+        info.specialty = (await executeQuery('select id from medical_specialties where name = $1', [info.specialty]))[0].id;
     }
     if (typeof info.workplace === 'string') {
         const query = `
