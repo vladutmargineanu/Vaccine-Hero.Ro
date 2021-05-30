@@ -4,9 +4,12 @@ Web platform for the Ministry of Health - Romania that helps the interaction bet
 ``` Backend - server:```
 
 Initializare proiect:
-npm init
+ ```jsp
+npm init  ```
+
 Instalare pachete:
-npm install nume_pachet --save
+ ```jsp
+npm install nume_pachet --save ```
 
 Containerizare (docker and docker-compose)
 docker container ls -qa
