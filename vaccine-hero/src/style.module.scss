@@ -1,0 +1,526 @@
+@import '~office-ui-fabric-core/src/sass/variables/Color.Variables';
+
+.nav {
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  .logo {
+    margin: 0 15px;
+  }
+
+  .navMenu {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    .navMenu {
+      display: none;
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      margin: 0;
+
+      img {
+        position: relative;
+        left: -50%;
+      }
+    }
+
+    .hamburgerMenu {
+      display: block;
+      margin-left: 15px;
+    }
+  }
+
+  .verticalSeparator {
+    width: 1px;
+    height: 30px;
+    background-color: black;
+    margin: auto 0;
+  }
+
+  .stack {
+    position: absolute;
+    z-index: 1001;
+    height: 100%;
+    right: 0;
+  }
+
+  .link {
+    text-decoration: none;
+
+    & > * {
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.personaBtn {
+  padding: 0 10px 0 15px;
+  height: 100%;
+}
+
+.personaCompact {
+  display: none;
+}
+
+.personaExtended {
+}
+
+@media screen and (max-width: 800px) {
+  .personaCompact {
+    display: block;
+  }
+
+  .personaExtended {
+    display: none;
+  }
+}
+
+.signinBtn {
+  padding: 0 10px 0 10px;
+  height: 100%;
+
+  &:hover {
+    background-color: $ms-color-neutralLighter;
+  }
+}
+
+.smallLink {
+  font-size: small;
+  text-decoration: none;
+}
+
+.box {
+  background-color: white;
+
+  max-width: 300px;
+  padding: 20px 40px;
+
+  margin: auto;
+  z-index: 1;
+
+  overflow: hidden;
+}
+
+.slideLeft {
+  animation-name: ms-motion-slideLeftIn;
+  animation-duration: 0.5s;
+}
+
+.cardGridContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+}
+
+.listGridTile {
+  position: relative;
+  outline: none;
+  float: left;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 10px;
+}
+
+.listGrid {
+  padding: 0 20px;
+  overflow: auto;
+}
+
+.card {
+  display: inline-block;
+  width: 250px;
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+
+  .centerBox {
+    margin: auto;
+
+    .column {
+      float: left;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 20px 30px;
+
+  background-color: white;
+}
+
+.homeContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 10px 0;
+
+  background-color: white;
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+
+    box-sizing: border-box;
+    padding: 20px 30px 10px 30px;
+
+    margin: 20px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white
+  }
+
+  .icon {
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    margin: 0 25px;
+
+    color: #ae4f5d;
+  }
+
+  .heading {
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+
+/* Create two equal columns that floats next to each other */
+.col {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col {
+    width: 100%;
+  }
+}
+
+img {
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.groupListHeader {
+  padding: 0 10px;
+
+  border: none;
+  border-bottom: 1px solid gray;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #edebe9;
+  }
+}
+
+.questionFormBox {
+  width: 55%;
+}
+
+.flexContainer {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  margin: 30px auto 0 auto;
+  padding: 50px 0 30px 0;
+
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.flexContainerScreenHeight {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  margin: 30px auto 0 auto;
+  padding: 50px 0 30px 0;
+
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .flexContainer, .flexContainerScreenHeight {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 10px;
+  }
+
+  .cardGridContainer {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .questionFormBox {
+    width: 70%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .questionFormBox {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.pad {
+  padding: 8px;
+}
+
+.msgMgmtHeader {
+  padding: 0 30px;
+}
+
+.scrollablePane {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.msgIcon {
+  align-self: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.msgEditBox {
+  padding: 0 35px 15px 35px;
+}
+
+.widthLimit {
+  max-width: 500px;
+}
+
+.msgList {
+  height: 100%;
+  padding: 0 10px;
+
+  .icon {
+    align-self: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .content {
+    margin-left: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  .description {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.leftRight {
+  margin-top: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.accountBox {
+  box-sizing: border-box;
+  padding: 0 10px 10px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cardDetails {
+  box-sizing: border-box;
+  padding: 0 0 10px 0;
+}
+
+.modal {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  width: 600px;
+
+  .body {
+    flex: 4 4 auto;
+    padding: 15px 20px;
+    overflow-y: hidden;
+
+    p {
+      margin: 14px 0;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.gridAutoFill {
+  display: grid;
+  position: relative;
+  overflow: auto;
+
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+  .gridItem {
+    //background-color: green;
+    //border: 1px solid #fff;
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.inlineLabel {
+  box-sizing: border-box;
+  padding-left: 12px;
+  margin-right: 10px;
+
+  width: auto;
+
+  float: left;
+}
+
+.spinButton {
+  max-width: 300px;
+
+  box-sizing: border-box;
+  padding-left: 12px;
+}
+
+.recordCard {
+  width: 95%;
+  margin: 20px auto 0 auto;
+
+  box-sizing: border-box;
+  padding: 15px 20px;
+
+  background-color: white;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+.fullHeight {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.actionBar {
+  background-color: white;
+  padding: 10px 20px;
+}
+
+.actionBarTight {
+  background-color: white;
+  padding: 10px 20px 0 20px;
+}
+
+.vertCenterFullWidth {
+  display: flex;
+  align-items: center;
+  width: 100%
+}
+
+.cmdBar {
+  position: relative;
+  height: 44px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.alignRight {
+  position: absolute;
+  right: 0
+}
+
+.placeholder {
+  display: block;
+  content: '';
+  height: calc(70vw * 63 / 150);
+}
+
+@media screen and (max-width: 600px) {
+  .placeholder {
+    display: block;
+    content: '';
+    height: calc(100vw * 63 / 150);
+  }
+}
