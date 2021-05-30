@@ -5,43 +5,63 @@ Web platform for the Ministry of Health - Romania that helps the interaction bet
 
 Initializare proiect:
  ```jsp
-npm init  ```
+npm init  
+```
 
 Instalare pachete:
  ```jsp
-npm install nume_pachet --save ```
+npm install nume_pachet --save 
+```
 
 Containerizare (docker and docker-compose)
+ ```jsp
 docker container ls -qa
 docker container rm [id]
-
+ ```
+  ```jsp
 docker volume ls 
 docker volume rm [VolumeName]
-
+ ```
 Crearea bazei de date in container - init
+ ```jsp
 docker-compose up
+ ```
 Stergerea volumelor create:
+ ```jsp
 docker system prune –volumes
+ ```
 
 ``` Front-end:```
 
 Generarea unui proiect:
+ ```jsp
 npx create-react-app vaccine-hero
+ ```
 
 Inside that directory, you can run several commands:
 
 Starts the development server:
+ ```jsp
 npm start 
+ ```
 
 Bundles the app into static files for production:
+ ```jsp
 npm run build
+ ```
 
 Starts the test runner.
+ ```jsp
 npm test
+ ```
 
 Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+ ```jsp
 npm run eject
+ ```
 
 We suggest that you begin by typing:
+ ```jsp
 cd vaccine-hero
 npm start
+ ```
