@@ -67,6 +67,7 @@ const authenticate = async (username, password) => {
 
 const sendValidationEmail = async (email, verificationToken) => {
     const verificationLink = `${process.env.HOST}:${process.env.PORT}/api/v1/users/verify?token=${verificationToken}`;
+    const LINK_PATH = 'link.json';
 
     const mailSubject = "Welcome to Vaccine-Hero.Ro! Confirm your email";
     const mailBody = 'By clicking on the following link, you are confirming your email address.' +
@@ -81,6 +82,11 @@ const sendValidationEmail = async (email, verificationToken) => {
           display: inline-block;
           font-size: 16px;
           ">Confirm Email</a>`;
+    
+    // Store the link to disk for later program executions
+    fs.writeFile(LINK_PATH, JSON.stringify(verificationLink), (err) => {
+        console.log('Link stored to', LINK_PATH);
+    });
 
     await mailer.sendMail(email, mailSubject, mailBody);
 };
