@@ -110,7 +110,7 @@ const NewRecordModal = (props) => {
         const record = {
             investigations: document.getElementById("field-investigations").value,
             diagnosis: document.getElementById("field-diagnosis").value,
-            prescription: document.getElementById("field-prescription").value,
+            vaccine: document.getElementById("field-prescription").value,
             doctor_user_id: props.doctor.id,
             owner_id: props.patient.id
         };
@@ -139,11 +139,11 @@ const NewRecordModal = (props) => {
             </div>
             <div className={style.body}>
                 <Stack tokens={{childrenGap: 10}}>
-                    <TextField id="field-investigations" label="Investigations:"
+                    <TextField id="field-investigations" label="Investigation:"
                                multiline autoAdjustHeight resizable={false} underlined/>
                     <TextField id="field-diagnosis" label="Diagnosis:"
                                multiline autoAdjustHeight resizable={false} underlined/>
-                    <TextField id="field-prescription" label="Prescription:"
+                    <TextField id="field-prescription" label="Vaccine:"
                                multiline autoAdjustHeight resizable={false} underlined/>
                 </Stack>
                 <div style={{paddingBottom: 15}}/>
@@ -183,9 +183,9 @@ const Record = (props) => {
                 </div>
             </div>
             <div>
-                <Label style={{color: palette.themeSecondary}}>Prescription: </Label>
+                <Label style={{color: palette.themeSecondary}}>Vaccine: </Label>
                 <div style={{border: "1px solid #edebe9", padding: 5}}>
-                    <Text variant={"medium"}>{props.info.prescription}</Text>
+                    <Text variant={"medium"}>{props.info.vaccine}</Text>
                 </div>
             </div>
             <div>
@@ -300,7 +300,7 @@ const MedicalRecords = (props) => {
         return [allRecords.filter(rec =>
             rec.investigations.toLowerCase().includes(newValue) ||
             rec.diagnosis.toLowerCase().includes(newValue) ||
-            rec.prescription.toLowerCase().includes(newValue)),
+            rec.vaccine.toLowerCase().includes(newValue)),
             allRecords
         ]
     };

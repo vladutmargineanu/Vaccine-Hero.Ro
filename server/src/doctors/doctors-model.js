@@ -92,9 +92,10 @@ const add = async (data) => {
     await _assureForeignKeysPrerequisites(data);
 
     const query = `
-        insert into doctors(name, title, specialty, workplace, description, rating, picture_url)
-        values ($1, $2, $3, $4, $5, $6, $7)
+        insert into doctors(name, title, specialty, workplace, description, rating, picture_url, user_id)
+        values ($1, $2, $3, $4, $5, $6, $7, $8)
     `;
+
     await executeQuery(query, [
         data.name,
         data.title,
@@ -103,7 +104,9 @@ const add = async (data) => {
         data.description,
         data.rating,
         data.picture_url,
+        (await executeQuery('select id from users where name = $1', [data.name]))[0].id,
     ]);
+
 };
 
 module.exports = {

@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const {Mailer} = require('../utils/mailer');
 const randtoken = require('rand-token');
 const {UserRoles, hashPassword, validatePassword} = require('./authorization');
-
+const fs = require('fs');
 
 const mailer = new Mailer();
 mailer.init();

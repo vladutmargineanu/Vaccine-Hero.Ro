@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS doctors (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id) NOT NULL,
+    user_id INTEGER REFERENCES users(id),
     name VARCHAR (25) NOT NULL,
     title varchar,
     description varchar,
@@ -105,17 +105,30 @@ values('Pediatru');
 insert into medical_specialties(name)
 values('Oftalmolog');
 
+-- parola vladut
 insert into users(username, password, email, name, role_id, email_verification_token)
 values ('admin', '$2a$05$AG0s/aVpnSQqPM1EH.08XuVfwdlLARFPs08X4h5mLVYc8Oow5i1Rm', null, 'Administrator', 0, null);
 
+-- parola vladut
 insert into users(username, password, email, name, role_id, email_verification_token)
 values ('tech', '$2a$05$AG0s/aVpnSQqPM1EH.08XuVfwdlLARFPs08X4h5mLVYc8Oow5i1Rm', null, 'Tech Support', 1, null);
 
+-- parola vladut
 insert into users(username, password, email, name, role_id, email_verification_token)
-values ('vladut', '$2a$05$AG0s/aVpnSQqPM1EH.08XuVfwdlLARFPs08X4h5mLVYc8Oow5i1Rm', 'vladut.margineanu@gmail.com', 'Vladut Margineanu', 2, null);
+values ('vladut', '$2a$05$AG0s/aVpnSQqPM1EH.08XuVfwdlLARFPs08X4h5mLVYc8Oow5i1Rm', 'vladutz97.nm@gmail.com', 'Vladut Margineanu', 2, null);
 
+-- parola dragos
 insert into users(username, password, email, name, role_id, email_verification_token)
-values ('dragos', '$2a$05$lNFodBYPtHnE4teaLP55weTGpBLGbAP9JZXsUqBDmt5jeWvpZ5pDq', 'vladutz97.nm@gmail.com', 'Dragos Margineanu', 2, null);
+values ('dragos', '$2a$05$lNFodBYPtHnE4teaLP55weTGpBLGbAP9JZXsUqBDmt5jeWvpZ5pDq', 'valdutz_dutu97@yahoo.com', 'Dragos Margineanu', 2, null);
 
--- insert into users(username, password, email, name, role_id, email_verification_token)
--- values ('eminescu', '$2a$05$upoII7gDkg8T52.HNroBEO8UMovAeWNcF4bvZOHNPRZMyw/EZQxHC', 'valdutz_dutu97@yahoo.com', 'Mihai Eminescu', 3, null);
+-- parola eminescu
+insert into users(username, password, email, name, role_id, email_verification_token)
+values ('eminescu', '$2a$05$q/pf0m57Lb3db201eTAbHOcXfz95bMsPj3O8ZfzUDA6SEceKVI0Da', null, 'Mihai Eminescu', 3, null);
+
+-- parola creanga
+insert into users(username, password, email, name, role_id, email_verification_token)
+values ('creanga', '$2a$05$RSiV3puxQHDY0179nDIZq.w1Gc6P.zHYunWpXWe7ANCVZ.O/E2zxO', null, 'Ion Creanga', 3, null);
+
+-- parola bacovia
+insert into users(username, password, email, name, role_id, email_verification_token)
+values ('bacovia', '$2a$05$RSiV3puxQHDY0179nDIZq.w1Gc6P.zHYunWpXWe7ANCVZ.O/E2zxO', null, 'George Bacovia', 3, null);
